@@ -19,9 +19,14 @@ public class Builder
 
     public static void BuildProject(string path, BuildTarget buildTarget)
     {
+        // Setup build options (e.g. scenes, build output location)
         var options = new BuildPlayerOptions
         {
-            scenes = ActiveScenePaths.ToArray(), 
+            // Change to scenes from your project
+            scenes = new[]
+            {
+                "Assets/Scenes/SampleScene.unity",
+            },
             target = buildTarget, 
             locationPathName = path,
         };
