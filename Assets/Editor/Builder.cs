@@ -9,12 +9,12 @@ public class Builder
 {
     [MenuItem("Build/Build Android")]
     public static void BuildAndroid() {
-        BuildProject("../", BuildTarget.Android);
+        BuildProject("../Android", BuildTarget.Android);
     }
 
     [MenuItem("Build/Build iOS")]
     public static void BuildIos() {
-        BuildProject("../", BuildTarget.iOS);
+        BuildProject("../iOS", BuildTarget.iOS);
     }
 
     public static void BuildProject(string path, BuildTarget buildTarget)
