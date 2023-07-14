@@ -3,16 +3,18 @@ using System.Collections.Generic;
 using UnityEngine;
 
 // https://www.youtube.com/watch?v=BJzYGsMcy8Q&list=PLx7AKmQhxJFaj0IcdjGJzIq5KwrIfB1m9&index=2
+// https://www.youtube.com/watch?v=t6e2MvEG0Tc&list=PLx7AKmQhxJFaj0IcdjGJzIq5KwrIfB1m9&index=4
 public class PlayerMovement2 : MonoBehaviour
 {
     
+    private CharacterController characterController;
     public float speed;
     public float rotationSpeed;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        characterController = GetComponent<CharacterController>();
     }
 
     // Update is called once per frame
@@ -21,8 +23,9 @@ public class PlayerMovement2 : MonoBehaviour
         float horizontalInput = Input.GetAxis("Horizontal");
         float verticalInput = Input.GetAxis("Vertical");
         Vector3 movementDirection = new Vector3(horizontalInput, 0, verticalInput);
+        float magnitude = Mathf.Clamp01(movementDirection.magnitude) * speed;
         movementDirection.Normalize();
-        transform.Translate(movementDirection * speed * Time.deltaTime, Space.World);
+        characterController.SimpleMove(movementDirection * magnitude);
         if (movementDirection != Vector3.zero)
         {
             Quaternion toRotation = Quaternion.LookRotation(movementDirection, Vector3.up);
