@@ -1,0 +1,8 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/SampleScene.uss?fileID=7433441132597879392&amp;guid=803ee71617b6e864f8957a7abcd35031&amp;type=3#SampleScene" />
+    <ui:VisualElement style="height: 100%; width: 100%;">
+        <ui:VisualElement name="Container" style="align-items: center; justify-content: flex-end; height: 75%;">
+            <ui:Button text="PLAY" display-tooltip-when-elided="true" name="Button" class="button" style="width: 25%; align-items: center; justify-content: flex-end; color: rgb(238, 238, 238);" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>
