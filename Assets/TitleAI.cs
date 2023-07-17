@@ -31,7 +31,6 @@ public class TitleAI : MonoBehaviour
         {
             if (sitTime == null)
             {
-                Debug.Log("sitting");
                 // Set sitTime
                 sitTime = Time.time;
                 // Switch animation to sitting
@@ -42,7 +41,6 @@ public class TitleAI : MonoBehaviour
             // If the sitWaitTime has elapsed, then...
             if (Time.time - sitTime >= sitWaitTime)
             {
-                Debug.Log("walking");
                 // End sitTime
                 sitTime = null;
                 // Resume walking animation

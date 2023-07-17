@@ -23,6 +23,6 @@ public class SampleScene : MonoBehaviour
     {
         VisualElement root = GetComponent<UIDocument>().rootVisualElement;
         Button button = root.Q<Button>("Button");
-        button.clicked += () => SceneManager.LoadScene(sceneName: "Sandbox");
+        button.clicked += () => SceneManager.LoadScene(sceneName: "Alley");
     }
 }
