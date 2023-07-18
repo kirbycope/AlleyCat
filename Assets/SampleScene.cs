@@ -19,10 +19,9 @@ public class SampleScene : MonoBehaviour
         
     }
 
-    private void OnEnable()
+    public void Play()
     {
-        VisualElement root = GetComponent<UIDocument>().rootVisualElement;
-        Button button = root.Q<Button>("Button");
-        button.clicked += () => SceneManager.LoadScene(sceneName: "Alley");
+       SceneManager.LoadScene(sceneName: "Alley");
     }
+
 }
