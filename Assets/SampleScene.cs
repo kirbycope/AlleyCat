@@ -7,9 +7,12 @@ using UnityEngine.UIElements;
 public class SampleScene : MonoBehaviour
 {
 
+    private bool muted;
+
     // Start is called before the first frame update
     void Start()
     {
+        muted = false;
         Screen.orientation = ScreenOrientation.LandscapeLeft;
     }
 
@@ -17,6 +20,20 @@ public class SampleScene : MonoBehaviour
     void Update()
     {
         
+    }
+
+    public void Mute()
+    {
+        if (muted)
+        {
+            muted = false;
+            AudioListener.volume = 1;
+        }
+        else
+        {
+            muted = true;
+            AudioListener.volume = 0;
+        }
     }
 
     public void Play()
