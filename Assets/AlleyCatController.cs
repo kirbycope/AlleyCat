@@ -13,6 +13,7 @@ public class AlleyCatController : MonoBehaviour
     private float ySpeed;
     public float jumpButtonGracePeriod;
     public float jumpSpeed;
+    public Joystick joystick;
     public float speed;
     public float rotationSpeed;
 
@@ -39,18 +40,7 @@ public class AlleyCatController : MonoBehaviour
         }
         if (Input.GetButtonDown("Jump"))
         {
-            jumpButtonPressedTime = Time.time;
-        }
-        if (Time.time - lastGroundedTime <= jumpButtonGracePeriod)
-        {
-            characterController.stepOffset = originalStepOffset;
-            ySpeed = -0.5f;
-            if (Time.time - jumpButtonPressedTime <= jumpButtonGracePeriod)
-            {
-                ySpeed = jumpSpeed;
-                jumpButtonPressedTime = null;
-                lastGroundedTime = null;
-            }
+            Jump();
         }
         else
         {
@@ -68,6 +58,22 @@ public class AlleyCatController : MonoBehaviour
         else
         {
             animator.SetBool("isMoving", false);
+        }
+    }
+
+    public void Jump()
+    {
+        jumpButtonPressedTime = Time.time;
+        if (Time.time - lastGroundedTime <= jumpButtonGracePeriod)
+        {
+            characterController.stepOffset = originalStepOffset;
+            ySpeed = -0.5f;
+            if (Time.time - jumpButtonPressedTime <= jumpButtonGracePeriod)
+            {
+                ySpeed = jumpSpeed;
+                jumpButtonPressedTime = null;
+                lastGroundedTime = null;
+            }
         }
     }
 }
