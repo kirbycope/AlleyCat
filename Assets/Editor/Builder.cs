@@ -26,6 +26,8 @@ public class Builder
             scenes = new[]
             {
                 "Assets/Scenes/SampleScene.unity",
+                "Assets/Scenes/Sandbox.unity",
+                "Assets/Scenes/Alley.unity",
             },
             target = buildTarget, 
             locationPathName = path,
