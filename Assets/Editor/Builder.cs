@@ -1,6 +1,3 @@
-// https://docs.unity.com/embeddedlinux/en/manual/how-to-build-using-cli#Build_script
-// https://fadhilnoer.medium.com/automating-unity-builds-part-1-ba0c60e8d06b
-// https://docs.unity3d.com/ScriptReference/BuildPipeline.BuildPlayer.html
 using UnityEditor;
 using UnityEditor.Build.Reporting;
 using UnityEngine;
@@ -17,9 +14,13 @@ public class Builder
         BuildProject("iOS/alleycat.ipa", BuildTarget.iOS);
     }
 
+    [MenuItem("Build/Build WebGL")]
+    public static void BuildWebgl() {
+        BuildProject("WebGL", BuildTarget.WebGL);
+    }
+
     public static void BuildProject(string path, BuildTarget buildTarget)
     {
-        // Setup build options (e.g. scenes, build output location)
         var options = new BuildPlayerOptions
         {
             // Change to scenes from your project

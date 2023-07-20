@@ -24,7 +24,7 @@
 1. Open Unity
 1. In the top menu, select "Build" > "Build Android"
     - These methods are stored in [/Assets/Editor/Builder.cs](/Assets/Editor/Builder.cs)
-    - The output is saved as `Android/alleycat.apk`
+    - The output is saved as `/Android/alleycat.apk`
 
 ### Android [Dev] Using Command-line
 1. Change directory to the root of the repo
@@ -51,7 +51,7 @@
 1. Open Unity
 1. In the top menu, select "Build" > "Build iOS"
     - These methods are stored in [/Assets/Editor/Builder.cs](/Assets/Editor/Builder.cs)
-    - The output is saved as `iOS/alleycat.ipa`
+    - The output is saved as `/iOS/alleycat.ipa`
 
 ### iOS [Dev] Using Command-line
 1. Change directory to the root of the repo
@@ -76,6 +76,18 @@
     - Under "Publishing Settings" > "Compression Format", select "Disabled"
         - This is to work with GitHub Pages (below)
 1. Select "Build" and enter the name for the output directory
+
+### WebGL [Dev] Using Unity IDE (Custom MenuItem)
+1. Open Unity
+1. In the top menu, select "Build" > "Build WebGL"
+    - These methods are stored in [/Assets/Editor/Builder.cs](/Assets/Editor/Builder.cs)
+    - The output is saved in `/WebGL`
+
+### WebGL [Dev] Using Command-line
+1. Change directory to the root of the repo
+1. Run the following command (updating the Unity Version if needed)
+    - OSX: `/Applications/Unity/Hub/Editor/2022.3.4f1/Unity.app/Contents/MacOS/Unity -batchmode -nographics -stackTraceLogType Full -quit -logFile build-WebGL.log -projectPath / -buildTarget WebGL`
+    - Windows: `C:\Program Files\Unity\Hub\Editor\2022.3.4f1\Editor\Unity.exe -batchmode -nographics -stackTraceLogType Full -quit -logFile build-WebGL.log -projectPath \ -buildTarget WebGL`
 
 ### WebGL [Dev] Using GitHub Actions
 1. Navigate to [Actions](https://github.com/kirbycope/AlleyCat/actions)
